@@ -37,6 +37,9 @@ public class Main {
         //AOC ---
 
 
+        // Swap two numbers
+        Swap sw= new Swap();
+        sw.swap(56, 67);
    }
 }
 
