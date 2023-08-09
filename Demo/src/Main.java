@@ -43,12 +43,28 @@ public class Main {
 //
 
         // Finding ASCII code of a number
-        Scanner number= new Scanner(System.in);
-        System.out.println("Enter the number:");
-        String v = number.next();
-        char x = v.charAt(0);
-        int t = (int)x;
-        System.out.println(t);
+//        Scanner number= new Scanner(System.in);
+//        System.out.println("Enter the number:");
+//        String v = number.next();
+//        char x = v.charAt(0);
+//        int t = (int)x;
+//        System.out.println(t);
+
+        // method to find vowel or constant
+            Scanner alpha= new Scanner(System.in);
+            System.out.println("Enter the alpha:");
+            String in= alpha.next();
+//            if ("aeiou".contains(in.toLowerCase())){
+            if (in.equalsIgnoreCase("a") ||
+                    in.equalsIgnoreCase("e") ||
+                    in.equalsIgnoreCase("i") ||
+                    in.equalsIgnoreCase("o") ||
+                    in.equalsIgnoreCase("u")){
+                System.out.println(in + " is vowel");
+            }
+            else {
+                System.out.println(in + " is constant");
+            }
 
 
    }
