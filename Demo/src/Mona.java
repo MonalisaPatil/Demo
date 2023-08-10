@@ -5,6 +5,8 @@ import Item.*;
 import Mathematics.MathematicalFunction;
 import Mathematics.Range;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Mona {
@@ -22,87 +24,98 @@ public class Mona {
     // TODO: 8/2/23  step5: once he orders place an order in system
     // TODO: 8/2/23  step6: and as soon as the order is cooked update the customer class with details of the order
     public static void main(String args[]) {
-        // TODO: 8/2/23  step1: prepare muliple classes for multiple food items
-        // TODO: 8/2/23 step2: provide details in indiviadial classes
-        PaneerTikka paneerTikka = new PaneerTikka();
-        paneerTikka.setItemName("Paneer Tikka");
-        paneerTikka.setSpicyLevel("High");
-        paneerTikka.setIngredients("Paneer,Dry gravy, Tomato , Onion, Redchilli");
-        paneerTikka.setAvailability(true);
-        paneerTikka.setPrice(200);
-        paneerTikka.setCuisineType('V');
 
-        GobiManchurian gobiManchurian = new GobiManchurian();
-        gobiManchurian.setItemName("Gobi Manchurian");
-        gobiManchurian.setSpicyLevel("High");
-        gobiManchurian.setIngredients("Gobi,vegetables, Soya sauce, Dry gravy, Tomato , Onion, Redchilli");
-        gobiManchurian.setAvailability(true);
-        gobiManchurian.setPrice(150);
-        gobiManchurian.setCuisineType('V');
+        List<ItemSold> itemSoldList= new ArrayList<>();
+        itemSoldList.add(new ItemSold("laptop",1700,"Dell",2,800,100));
+        itemSoldList.add(new ItemSold("headphone",1000,"Sony",4,200,200));
 
-        Chaat chaat = new Chaat();
-        chaat.setItemName("Chaat");
-        chaat.setSpicyLevel("High");
-        chaat.setIngredients("Samosa , curd, sev ,chutney, chaat masala,  Tomato , Onion, greenchilli");
-        chaat.setAvailability(true);
-        chaat.setPrice(100);
-        chaat.setCuisineType('V');
-
-        KadhaiPaneer kadhaiPaneer = new KadhaiPaneer();
-        kadhaiPaneer.setItemName("Kadhai Paneer");
-        kadhaiPaneer.setSpicyLevel("High");
-        kadhaiPaneer.setIngredients("Paneer, thick gravy, cashew,  Tomato , Onion, Redchilli");
-        kadhaiPaneer.setAvailability(true);
-        kadhaiPaneer.setPrice(250);
-        kadhaiPaneer.setCuisineType('V');
-
-
-        // TODO: 8/2/23 step2: provide details in indiviadial classes
-        System.out.println(paneerTikka);
-        System.out.println(gobiManchurian);
-        System.out.println(chaat);
-        System.out.println(kadhaiPaneer);
-
-        // TODO: 8/2/23  step4: ask the what he wants to order
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the item from menu");
-        String Menu = sc.nextLine();
-
-        // TODO: 8/2/23  step5: once he orders, place an order in system
-        System.out.println("customer has ordered " + Menu);
-
-        // TODO: 8/2/23  step6: and as soon as the order is cooked update the customer class with details of the order
-        Customer customer = new Customer();
-        if (Menu.equalsIgnoreCase(paneerTikka.getItemName())) {
-            customer.setCustomerOrdered(Menu);
-            customer.setCustomerSelectedSpicy(paneerTikka.getSpicyLevel());
-            customer.setItemName(paneerTikka.getItemName());
-            customer.setPrice(paneerTikka.getPrice());
-            customer.setIngrediant(paneerTikka.getIngredients());
-        } else if (Menu.equalsIgnoreCase(gobiManchurian.getItemName())) {
-            customer.setCustomerOrdered(Menu);
-            customer.setCustomerSelectedSpicy(gobiManchurian.getSpicyLevel());
-            customer.setItemName(gobiManchurian.getItemName());
-            customer.setPrice(gobiManchurian.getPrice());
-            customer.setIngrediant(gobiManchurian.getIngredients());
-        } else if (Menu.equalsIgnoreCase(chaat.getItemName())) {
-            customer.setCustomerOrdered(Menu);
-            customer.setCustomerSelectedSpicy(chaat.getSpicyLevel());
-            customer.setItemName(chaat.getItemName());
-            customer.setPrice(chaat.getPrice());
-            customer.setIngrediant(chaat.getIngredients());
-        } else if (Menu.equalsIgnoreCase(kadhaiPaneer.getItemName())) {
-            customer.setCustomerOrdered(Menu);
-            customer.setCustomerSelectedSpicy(kadhaiPaneer.getSpicyLevel());
-            customer.setItemName(kadhaiPaneer.getItemName());
-            customer.setPrice(kadhaiPaneer.getPrice());
-            customer.setIngrediant(kadhaiPaneer.getIngredients());
-
-        } else {
-            System.out.println("menu item doesn't exist");
+        for (ItemSold name: itemSoldList){
+            System.out.println(name.getItemName());
         }
 
-        System.out.println(customer);
+
+
+        // TODO: 8/2/23  step1: prepare muliple classes for multiple food items
+//        // TODO: 8/2/23 step2: provide details in indiviadial classes
+//        PaneerTikka paneerTikka = new PaneerTikka();
+//        paneerTikka.setItemName("Paneer Tikka");
+//        paneerTikka.setSpicyLevel("High");
+//        paneerTikka.setIngredients("Paneer,Dry gravy, Tomato , Onion, Redchilli");
+//        paneerTikka.setAvailability(true);
+//        paneerTikka.setPrice(200);
+//        paneerTikka.setCuisineType('V');
+//
+//        GobiManchurian gobiManchurian = new GobiManchurian();
+//        gobiManchurian.setItemName("Gobi Manchurian");
+//        gobiManchurian.setSpicyLevel("High");
+//        gobiManchurian.setIngredients("Gobi,vegetables, Soya sauce, Dry gravy, Tomato , Onion, Redchilli");
+//        gobiManchurian.setAvailability(true);
+//        gobiManchurian.setPrice(150);
+//        gobiManchurian.setCuisineType('V');
+//
+//        Chaat chaat = new Chaat();
+//        chaat.setItemName("Chaat");
+//        chaat.setSpicyLevel("High");
+//        chaat.setIngredients("Samosa , curd, sev ,chutney, chaat masala,  Tomato , Onion, greenchilli");
+//        chaat.setAvailability(true);
+//        chaat.setPrice(100);
+//        chaat.setCuisineType('V');
+//
+//        KadhaiPaneer kadhaiPaneer = new KadhaiPaneer();
+//        kadhaiPaneer.setItemName("Kadhai Paneer");
+//        kadhaiPaneer.setSpicyLevel("High");
+//        kadhaiPaneer.setIngredients("Paneer, thick gravy, cashew,  Tomato , Onion, Redchilli");
+//        kadhaiPaneer.setAvailability(true);
+//        kadhaiPaneer.setPrice(250);
+//        kadhaiPaneer.setCuisineType('V');
+//
+//
+//        // TODO: 8/2/23 step2: provide details in indiviadial classes
+//        System.out.println(paneerTikka);
+//        System.out.println(gobiManchurian);
+//        System.out.println(chaat);
+//        System.out.println(kadhaiPaneer);
+//
+//        // TODO: 8/2/23  step4: ask the what he wants to order
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter the item from menu");
+//        String Menu = sc.nextLine();
+//
+//        // TODO: 8/2/23  step5: once he orders, place an order in system
+//        System.out.println("customer has ordered " + Menu);
+//
+//        // TODO: 8/2/23  step6: and as soon as the order is cooked update the customer class with details of the order
+//        Customer customer = new Customer();
+//        if (Menu.equalsIgnoreCase(paneerTikka.getItemName())) {
+//            customer.setCustomerOrdered(Menu);
+//            customer.setCustomerSelectedSpicy(paneerTikka.getSpicyLevel());
+//            customer.setItemName(paneerTikka.getItemName());
+//            customer.setPrice(paneerTikka.getPrice());
+//            customer.setIngrediant(paneerTikka.getIngredients());
+//        } else if (Menu.equalsIgnoreCase(gobiManchurian.getItemName())) {
+//            customer.setCustomerOrdered(Menu);
+//            customer.setCustomerSelectedSpicy(gobiManchurian.getSpicyLevel());
+//            customer.setItemName(gobiManchurian.getItemName());
+//            customer.setPrice(gobiManchurian.getPrice());
+//            customer.setIngrediant(gobiManchurian.getIngredients());
+//        } else if (Menu.equalsIgnoreCase(chaat.getItemName())) {
+//            customer.setCustomerOrdered(Menu);
+//            customer.setCustomerSelectedSpicy(chaat.getSpicyLevel());
+//            customer.setItemName(chaat.getItemName());
+//            customer.setPrice(chaat.getPrice());
+//            customer.setIngrediant(chaat.getIngredients());
+//        } else if (Menu.equalsIgnoreCase(kadhaiPaneer.getItemName())) {
+//            customer.setCustomerOrdered(Menu);
+//            customer.setCustomerSelectedSpicy(kadhaiPaneer.getSpicyLevel());
+//            customer.setItemName(kadhaiPaneer.getItemName());
+//            customer.setPrice(kadhaiPaneer.getPrice());
+//            customer.setIngrediant(kadhaiPaneer.getIngredients());
+//
+//        } else {
+//            System.out.println("menu item doesn't exist");
+//        }
+//
+//        System.out.println(customer);
     }
 
 //}

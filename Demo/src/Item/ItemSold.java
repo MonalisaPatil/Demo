@@ -10,6 +10,18 @@ public class ItemSold {
 
     int itemProfitEarned;
 
+    public ItemSold(String itemName, int itemSoldat, String itemDescription, int itemQuantitySold, int totalSalePrice, int itemProfitEarned) {
+        this.itemName = itemName;
+        this.itemSoldat = itemSoldat;
+        this.itemDescription = itemDescription;
+        this.itemQuantitySold = itemQuantitySold;
+        this.totalSalePrice = totalSalePrice;
+        this.itemProfitEarned = itemProfitEarned;
+    }
+
+    public ItemSold() {
+    }
+
     public void setItemName(String itemName){
         this.itemName=itemName;
     }
