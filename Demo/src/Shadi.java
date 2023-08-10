@@ -4,4 +4,6 @@ public class Shadi {
      return paise= rishtedar * perplate;
 
     }
+
+
 }
